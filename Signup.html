@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container{
+            background: white;
+            width: 350px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align: center;
+            font-size: 22px;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background: #0056b3;
+        }
+
+        #res{
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .login-link{
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        a{
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Create New Account</h1>
+
+        user_id:
+        <input type="text" id="d1">
+
+        password:
+        <input type="text" id="d2">
+
+        <button type="button" onclick="Signup()">Signup</button>
+
+        <p id="res"></p>
+
+        <p class="login-link">
+            Already have an account? <a href="Login.html">Login</a>
+        </p>
+    </div>
+
+    <script>
+        function Signup(){
+            let user_id=document.getElementById("d1").value
+            let user_pwd=document.getElementById("d2").value
+
+            if(user_id==="" || user_pwd===""){
+                document.getElementById("res").innerHTML="Fill both fields"
+            }
+            else{
+                localStorage.setItem("create_id",user_id)
+                localStorage.setItem("create_pwd",user_pwd)
+                document.getElementById("res").innerHTML="Signup successful"
+                location.href="Login.html"
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container{
+            background: white;
+            width: 800px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align: center;
+            color: #007bff;
+        }
+
+        p{
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        input{
+            width: 120px;
+            padding: 8px;
+            margin: 10px 0 20px 0;
+            border: 1px solid red;
+            border-radius: 5px;
+        }
+
+        button{
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover{
+            background: #0056b3;
+        }
+
+        #fres{
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Welcome to the Exam</h1>
+
+        <p>Q(1). What is the capital of France?</p>
+        <p>A. Berlin <br> B. Paris <br> C. Madrid <br> D. Rome</p>
+        Ans: <input type="text" id="d1">
+
+        <p>Q(2). Which planet is known as the Red Planet?</p>
+        <p>A. Earth <br> B. Venus <br> C. Mars <br> D. Jupiter</p>
+        Ans: <input type="text" id="d2">
+
+        <p>Q(3). Who wrote "Romeo and Juliet"?</p>
+        <p>A. Charles Dickens <br> B. William Shakespeare <br> C. Mark Twain <br> D. Leo Tolstoy</p>
+        Ans: <input type="text" id="d3">
+
+        <p>Q(4). What is the largest mammal?</p>
+        <p>A. Elephant <br> B. Blue Whale <br> C. Giraffe <br> D. Hippopotamus</p>
+        Ans: <input type="text" id="d4">
+
+        <p>Q(5). Which gas do plants absorb during photosynthesis?</p>
+        <p>A. Oxygen <br> B. Nitrogen <br> C. Carbon Dioxide <br> D. Hydrogen</p>
+        Ans: <input type="text" id="d5">
+
+        <p>Q(6). What is the boiling point of water?</p>
+        <p>A. 50°C <br> B. 100°C <br> C. 150°C <br> D. 200°C</p>
+        Ans: <input type="text" id="d6">
+
+        <p>Q(7). Which continent is the largest?</p>
+        <p>A. Africa <br> B. Asia <br> C. Europe <br> D. Australia</p>
+        Ans: <input type="text" id="d7">
+
+        <p>Q(8). Who invented the telephone?</p>
+        <p>A. Graham Bell <br> B. Edison <br> C. Newton <br> D. Einstein</p>
+        Ans: <input type="text" id="d8">
+
+        <p>Q(9). What is the chemical symbol for gold?</p>
+        <p>A. Au <br> B. Ag <br> C. Gd <br> D. Go</p>
+        Ans: <input type="text" id="d9">
+
+        <p>Q(10). Which country is known as the Land of the Rising Sun?</p>
+        <p>A. China <br> B. Japan <br> C. Korea <br> D. Thailand</p>
+        Ans: <input type="text" id="d10">
+
+        <p>Q(11). Fastest land animal?</p>
+        <p>A. Lion <br> B. Tiger <br> C. Cheetah <br> D. Leopard</p>
+        Ans: <input type="text" id="d11">
+
+        <p>Q(12). Which organ pumps blood?</p>
+        <p>A. Liver <br> B. Lungs <br> C. Heart <br> D. Kidney</p>
+        Ans: <input type="text" id="d12">
+
+        <p>Q(13). Largest ocean?</p>
+        <p>A. Indian Ocean <br> B. Atlantic Ocean <br> C. Arctic Ocean <br> D. Pacific Ocean</p>
+        Ans: <input type="text" id="d13">
+
+        <p>Q(14). Who discovered gravity?</p>
+        <p>A. Galileo <br> B. Newton <br> C. Tesla <br> D. Pascal</p>
+        Ans: <input type="text" id="d14">
+
+        <p>Q(15). Days in leap year?</p>
+        <p>A. 365 <br> B. 366 <br> C. 364 <br> D. 360</p>
+        Ans: <input type="text" id="d15">
+
+        <button type="button" onclick="resubmit()">Submit</button>
+        <button type="button" onclick="res()">Result</button>
+
+        <p id="fres"></p>
+
+    </div>
+
+
+<script>
+    let rightans=0
+    let wrongans=0
+
+    function resubmit(){
+        
+        let ans1=document.getElementById("d1").value
+        let ans2=document.getElementById("d2").value
+        let ans3=document.getElementById("d3").value
+        let ans4=document.getElementById("d4").value
+        let ans5=document.getElementById("d5").value
+        let ans6=document.getElementById("d6").value
+        let ans7=document.getElementById("d7").value
+        let ans8=document.getElementById("d8").value
+        let ans9=document.getElementById("d9").value
+        let ans10=document.getElementById("d10").value
+        let ans11=document.getElementById("d11").value
+        let ans12=document.getElementById("d12").value
+        let ans13=document.getElementById("d13").value
+        let ans14=document.getElementById("d14").value
+        let ans15=document.getElementById("d15").value
+
+        function check(ans, correct){
+            if(ans.toUpperCase() === correct){
+                rightans++
+            } else {
+                wrongans++
+            }
+        }
+
+        check(ans1,"B")
+        check(ans2,"C")
+        check(ans3,"B")
+        check(ans4,"B")
+        check(ans5,"C")
+        check(ans6,"B")
+        check(ans7,"B")
+        check(ans8,"A")
+        check(ans9,"A")
+        check(ans10,"B")
+        check(ans11,"C")
+        check(ans12,"C")
+        check(ans13,"D")
+        check(ans14,"B")
+        check(ans15,"B")
+
+        document.getElementById("fres").innerHTML="Exam Completed"
+    }
+
+    function res(){
+        let total=(rightans*4)-(wrongans/4)
+        document.getElementById("fres").innerHTML="Total Marks = "+total
+    }
+</script>
+
+</body>
+</html>
